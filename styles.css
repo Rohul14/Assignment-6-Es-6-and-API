@@ -1,0 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap');
+
+.font-lato{
+    font-family: "Lato", serif;
+}
+
+.highlight{
+    background-color: #0E7A81 ;
+    color: #FFFF;
+    border-radius: 100px;
+}

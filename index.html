@@ -3,9 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Punny Pet</title>
+    <!-- daisyui  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css link  -->
+     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    
+<body class="font-lato">
+    <header class="lg:mx-[140px] mx-5">
+        <nav class="pt-8">
+            <!-- navbar -->
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost p-0  lg:hidden">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h8m-8 6h16" />
+                      </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-lato">
+                      <li><a>Home</a></li>
+                      <li><a>Shop </a></li>
+                      <li><a>Contact</a></li>
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-xl pr-2 lg:p-0">
+                  <div class="flex items-center gap-2">
+                    <img class="w-full h-7 object-cover" src="images/Group 1.svg" alt="">
+                    <h1 class="text-3xl font-black font-lato">Punny</h1>
+                  </div></a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1 font-lato">
+                    <li><a>Home</a></li>
+                    <li><a>Shop </a></li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end ">
+                  <img class="border rounded-full p-2" src="images/Frame.png" alt="">
+                </div>
+              </div>
+        </nav>
+        <!-- description -->
+         <div class="text-center mx-auto w-full lg:w-[750px] pt-16">
+            <h4 class="text-2xl font-lato">Bringing Families Together ❤️‍🔥 </h4>
+            <h1 class="text-7xl font-lato font-black mt-7">Your Pet to Adoption Starts Here</h1>
+            <p class="mt-6 font-lato">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            <button onclick="scrollBtn()" class="btn bg-[#0E7A81] text-white font-lato px-8 my-8">View More</button>
+            <img src="images/pet.webp" alt="">
+         </div>
+    </header>
+    <!-- main  -->
+    <main id="main-section" class="lg:mx-[140px] mx-5">
+        <section class="mt-20">
+            <div class="text-center mx-auto w-full lg:w-[750px] space-y-4">
+                <h1 class="text-4xl font-lato font-black">Adopt  Your  Best Friend</h1>
+                <p class="font-lato">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+            <!-- categories btn -->
+            <div id="categories-container" class="pet-btn grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+                
+            </div>
+            <!-- Sort by Price -->
+            <div class="flex justify-between items-center pt-8">
+              <h1 class="text-2xl font-bold">Best Deal For you</h1>
+              <button class="btn text-white bg-[#0E7A81]">Sort by Price</button>
+            </div>
+            <!-- loader  -->
+            <div id="loader" class=" flex justify-center items-center min-h-screen py-20 hidden">
+              <span class="loading loading-ring loading-xs"></span>
+              <span class="loading loading-ring loading-sm"></span>
+              <span class="loading loading-ring loading-md"></span>
+              <span class="loading loading-ring loading-lg"></span>
+            </div>
+        </section>
+        <!-- collection section  -->
+        <section id="all-pet" class="my-16 flex flex-col  gap-5 lg:flex-row ">
+
+            <div id="all-collection" class="w-full lg:w-[75%] grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+
+            </div>
+            <!-- select section show image -->
+            <div class="w-full lg:w-[25%] border rounded-lg">
+               <div id="show-image" class="grid gap-2 grid-cols-1 lg:grid-cols-2 p-2">
+
+               </div>
+            </div>
+        </section>
+        <!--details btn method  section-->
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+        <button class="btn hidden" onclick="customModal.showModal()">open modal</button>
+        <dialog id="custom-modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="modal-innerText">
+
+            </div>
+            <div class="modal-action !block">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="w-full btn bg-[#cbdedf] text-[#0E7A81]">Close</button>
+            </form>
+            </div>
+        </div>
+        </dialog>
+        </section>
+        <!-- Adopt btn modal -->
+         <div id="bgAdopt" class="bg-black opacity-60 fixed inset-0 hidden z-[66]"></div>
+
+        <section id="adopt" class="fixed bg-white rounded top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[99] ">
+          <!-- Open the modal using ID.showModal() method -->
+            
+        </section>
+    </main>
+
+    <footer class="flex gap-8 flex-col lg:flex-row justify-between bg-[#131313] text-neutral-content p-10 lg:px-[140px] lg:py-[100px]">
+      <nav class="flex flex-col space-y-2">
+        <div class="flex items-center gap-2 lg:mb-4">
+          <img class="w-6 h-6" src="images/logo.webp" alt="">
+          <h6 class="text-2xl text-white font-bold">Punny</h6>
+        </div>
+        <a class="link link-hover text-sm">Location: av. Washington 165, NY CA 54003</a>
+        <a class="link link-hover text-sm">Phone: +31 85 964 47 25</a>
+        <a class="link link-hover text-sm">Email: info@yourdomain.com</a>
+        <a class="link link-hover text-sm">Openings hours: 9.00 AM - 5.00 PM</a>
+        <div class="flex gap-3 items-center lg:pt-4">
+          <img class="h-7 w-7" src="images/Group 2.png" alt="">
+          <img class="h-6 w-7" src="images/x-2 1.png" alt="">
+          <img class="h-7 w-8" src="images/Group 6.png" alt="">
+          <img class="h-7 w-7" src="images/instagram-2016-5 1.png" alt="">
+        </div>
+      </nav>
+      <nav class="flex flex-col space-y-2">
+        <h6 class="text-lg text-white lg:mb-4">Useful Links</h6>
+        <a class="link link-hover text-sm">Home</a>
+        <a class="link link-hover text-sm">About Us</a>
+        <a class="link link-hover text-sm"> Animals</a>
+        <a class="link link-hover text-sm">Foundation</a>
+        <a class="link link-hover text-sm">Contact</a>
+      </nav>
+      <nav class="flex flex-col">
+        <h6 class="text-lg text-white mb-4 lg:mb-6">Drop a Message</h6>
+        <div class="mb-3">
+          <input class="bg-[#323333] p-4 rounded-lg w-full" type="email" name="" placeholder="Enter your email" id="">
+        </div>
+        <button class="btn text-white bg-[#0E7A81] ">Subscribe</button>
+      </nav>
+      
+    </footer>
+    <script src="JavaScripts/index.js"></script>
 </body>
 </html>
